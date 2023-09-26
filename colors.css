@@ -18,16 +18,17 @@
     --cor16: #ffce59;
 
     background-color: var(--cor8);
-
-    font-family: 'Yusei Magic','sans-serif' !important;
-    font-style: normal;
     
    ;
-
 }
 
 .passPageColor {
     color:var(--cor5)
+}
+
+.font {
+    font-family: 'Yusei Magic', 'sans-serif' !important;
+    font-style: normal;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
