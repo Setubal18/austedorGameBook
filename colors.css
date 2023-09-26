@@ -19,7 +19,10 @@
 
     background-color: var(--cor8);
 
-    font-family: 'Yusei Magic', sans-serif;
+    font-family: 'Yusei Magic','sans-serif' !important;
+    font-style: normal;
+    
+   ;
 
 }
 
