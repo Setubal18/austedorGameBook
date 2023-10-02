@@ -1,0 +1,322 @@
+:: StoryTitle
+Austedor
+
+
+:: StoryData
+{
+  "ifid": "289F1995-C9EC-43EE-A008-EE9529BF5FB8",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Tela Principal",
+  "zoom": 1
+}
+
+
+:: \ ChamadoDaAventura {"position":"100,500","size":"100,100"}
+Alguns segundos se passam, e o vórtice está completamente formado, emitindo uma intensa luz azul no céu, quase como se houvesse um segundo sol.
+
+De repente, algo irrompe de dentro dele, movendo-se a uma velocidade incrível, caindo em algum lugar, mas em qual lugar?
+
+Margulis se questiona; ela nunca tinha testemunhado algo assim antes.
+
+Ela poderia utilizar a magia Locusfind para facilitar a localização do objeto, mas se o fizesse, os inquisidores poderiam descobrir que ela usou a magia.
+
+Outros segundos passam, e o vórtice simplesmente desaparece, como se nunca tivesse existido.
+
+Um arrepio percorre a espinha de Margulis, forçando-a a tomar uma decisão.
+  <button id="LocusFind" class="cursor-pointer">
+<img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/icones-magicos/b-locus-finder.jpg?raw=true" alt="Explosão de Fogo" width="100">
+    ''(text-colour:yellow)[LocusFind]''
+  </button>
+  <div id="resultado"class="txt-small"></div>
+    <div id="resultadoBom" style="display:none">
+    Ao utilizar a magia, Margulis consegue determinar a localização da queda.
+
+    -- É um homem, e ele está gravemente ferido!
+    -- Devo preparar o Sombra e partir imediatamente!
+
+    Margulis está ciente de que o tempo está se esgotando, pois sabe que logo os soldados começarão a procurá-la e pelo homem que caiu.
+    [[Preparar o Sombra e partir imediatamente -> jornadaAteOLocalDaQueda]]
+    </div>
+
+  <div id="resultadoRuim" style="display:none">
+    Margulis não consegue determinar exatamente onde ocorreu a queda, tendo apenas uma direção geral como referência. Além disso, ela está ciente de que, ao utilizar uma magia desse nível, pode ter chamado a atenção dos inquisidores, e é provável que mais soldados estejam a caminho, investigando quaisquer sinais de magia.
+
+    Com a ansiedade crescendo, Margulis se sente pressionada a tomar uma decisão rapidamente.
+  </div>
+
+    <script>
+        // Função para gerar um número aleatório entre 1 e 100
+        function gerarNumeroAleatorio() {
+            return Math.floor(Math.random() * 100) + 1;
+        }
+
+        // Função para manipular o clique do botão
+        document.getElementById("LocusFind").addEventListener("click", function() {
+            const confirmacao = window.confirm("Realmete deseja usar essa magia?");
+
+            if (confirmacao) {
+                localStorage.setItem('UselocusFind','true')
+                const numeroAleatorio = gerarNumeroAleatorio();
+                document.getElementById("resultado").textContent = `Você Tirou: ${numeroAleatorio}`;
+                const x = 60;
+            
+                if (numeroAleatorio > x) {
+                    document.getElementById("resultadoBom").style.display = "block";
+                }
+                else{
+                    document.getElementById("resultadoRuim").style.display = "block";
+                }
+            }
+        });
+    </script>
+ 
+[[Entrar na cabana -> voltarACabana]]
+[[Ir Investigar -> investigarObjeto]]
+
+
+:: \ investigarObjeto {"position":"300,725","size":"100,100"}
+
+
+
+:: \ jornadaAteOLocalDaQueda {"position":"300,500","size":"100,100"}
+
+
+
+:: \ voltarACabana {"position":"25,725","size":"100,100"}
+
+
+
+:: Magias {"position":"400,200","size":"100,100"}
+
+
+
+:: Passagem 1: Início da Aventura {"position":"100,300","size":"100,100"}
+=|=
+<img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/img/capt1.jpg?raw=true" alt="Margulis olhando a tempestade" width="100%" higth="auto">
+=|=
+<p>
+O ano é 923 antes da era comum, e um ano se passou desde que Margulis perdeu sua avó. O dia está gelado e tranquilo, com as folhas ainda cobertas por uma fina camada de gelo devido ao orvalho.
+</p>
+|==|
+<p>
+
+Margulis, uma jovem e talentosa usuária da magia, apesar das restrições impostas pelo estado, continua seus estudos de forma secreta. Seus longos cabelos negros caem sobre um vestido típico de camponesa enquanto ela começa suas tarefas.
+
+Enquanto inicia suas atividades, Margulis discretamente utiliza a magia para facilitar seu trabalho. No entanto, o céu começa a mudar, como se uma tempestade estivesse se formando, e raios começam a cair. Um vórtice começa a se formar à distância.
+
+-- Será que alguém está usando magia? -- questiona Margulis.
+-- Não... não parece ser magia, é algo diferente... -- ela reflete.
+</p>
+
+[[next -> ChamadoDaAventura]]
+
+
+
+:: SobreOMundo {"position":"250,200","size":"100,100"}
+<link rel="stylesheet" type="text/css" href="colors.css">
+  <h1>Locais de Austenor</h1>
+  <ul>
+    <li style="list-style-type: none;">
+      <h2>Capital de Austedor:</h2>
+      <ul>
+        <li>Cercada por uma densa floresta fechada.</li>
+        <li>Epicentro do poder do rei e da rainha.</li>
+        <li>Domínio cruel sobre o reino a partir deste local.</li>
+      </ul>
+    </li>
+    <li style="list-style-type: none;">
+      <h2>Tundra ao Norte:</h2>
+      <ul>
+        <li>Terras geladas e cobertas de neve.</li>
+        <li>Vegetação escassa e ambiente desafiador.</li>
+        <li>Oferece seu próprio conjunto de obstáculos e mistérios.</li>
+      </ul>
+    </li>
+    <li style="list-style-type: none;">
+      <h2>Florestas Fechadas:</h2>
+      <ul>
+        <li>Estendem-se por várias áreas do vale.</li>
+        <li>Árvores altas e vegetação densa criam uma atmosfera misteriosa.</li>
+        <li>Refúgio e habitat para criaturas mágicas que buscam escapar da opressão do reino.</li>
+      </ul>
+    </li>
+    <li style="list-style-type: none;">
+      <h2>Pântanos ao Sul:</h2>
+      <ul>
+        <li>Ocupam algumas partes do vale.</li>
+        <li>Ambiente úmido e lodoso.</li>
+        <li>Oferecem desafios naturais e podem ser traiçoeiros para os aventureiros.</li>
+      </ul>
+    </li>
+  </ul>
+
+
+:: Tela Principal {"position":"250,0","size":"100,100"}
+<!-- Dentro da passagem onde deseja o "vídeo" de fundo -->
+<link rel="stylesheet" type="text/css" href="colors.css">
+    <div style="text-align: center;">
+            <h1>Austedor</h1>
+    </div>
+    <div class="txt-cor6 font" style="font-size: 24px; padding: 20px; text-align: center;">
+        [[Iniciar Jogo->prologo]]
+        [[Sobre o Mundo->SobreOMundo]]
+        [[Livros de Feitiços->Magias]]
+    </div>
+</div>
+
+
+:: prologo {"position":"100,125","size":"100,100"}
+Há muito tempo, milênios antes das Guerras Coloniais e da ascensão da internet, em um mundo onde a magia e as criaturas mágicas não eram apenas lendas e canções, Austedor já era governada por tiranos expansionistas com punhos de ferro.
+
+Este reino era um nexo de magias obscuras e elementais, onde apenas os mais fortes sobreviviam, pelo menos até o reinado de Lucius Magnus II. O Rei Lucius Magnus III, nutrindo um ódio mortal não apenas pelos fracos, mas também pelas criaturas e usuários de magia, decidiu exterminar, perseguir e destruir Austedor.
+
+Sob seu governo, o uso da magia foi estritamente proibido, exceto para a Rainha Lillian, seus inquisidores e a Guarda Real. Austedor se tornou uma terra onde a magia era suprimida e qualquer traço dela era brutalmente eliminado. A geografia do reino serviu tanto como uma barreira defensiva contra invasores externos quanto como uma prisão para seus próprios habitantes.
+
+Mas uma nova esperança está prestes a surgir e mudar o destino de todo o mundo.
+<div class="txt-center">
+[[Iniciar Jornada->Passagem 1: Início da Aventura]]
+</div>
+
+
+:: StoryScript [script]
+// Evitar que o usuario abra develop tools. Comente esse trecho em develop/debug mode
+// document.addEventListener("contextmenu", (event) => event.preventDefault());
+// document.onkeydown = function (e) {
+//   if (event.keyCode == 123) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+//     return false;
+//   }
+//   if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+//     return false;
+//   }
+// };
+
+:: StoryStylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+* {
+    --cor1: #f6dbba;
+    --cor2: #db604c;
+    --cor3: #b13353;
+    --cor4: #5e2052;
+    --cor5: #74c99e;
+    --cor6: #317c87;
+    --cor7: #271854;
+    --cor8: #1a1016;
+
+    --cor9: #3a0000;
+    --cor10: #590000;
+    --cor11: #7c0300;
+    --cor12: #c02b18;
+    --cor13: #e04217;
+    --cor14: #f26d1f;
+    --cor15: #ff933a;
+    --cor16: #ffce59;
+
+    --cinza-claro: #f0f0f0; /* Cinza claro */
+    --cinza-medio: #808080; /* Cinza médio */
+    --cinza-escuro: #404040; /* Cinza escuro */
+    --preto: #000000; /* Preto */
+
+    font-family: 'Yusei Magic', 'sans-serif' !important;
+    font-style: normal;
+    background-color: var(--var8);
+}
+
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.txt-cor1 {
+    color: var(--cor1);
+}
+
+.txt-cor2 {
+    color: var(--cor2);
+}
+
+.txt-cor3 {
+    color: var(--cor3);
+}
+
+.txt-cor4 {
+    color: var(--cor4);
+}
+
+.txt-cor5 {
+    color: var(--cor5);
+}
+
+.txt-cor6 {
+    color: var(--cor6);
+}
+
+.txt-cor7 {
+    color: var(--cor7);
+}
+
+.txt-cor8 {
+    color: var(--cor8);
+}
+
+.txt-cor9 {
+    color: var(--cor9);
+}
+
+.txt-cor10 {
+    color: var(--cor10);
+}
+
+.txt-cor11 {
+    color: var(--cor11);
+}
+
+.txt-cor12 {
+    color: var(--cor12);
+}
+
+.txt-cor13 {
+    color: var(--cor13);
+}
+
+.txt-cor14 {
+    color: var(--cor14);
+}
+
+.txt-cor15 {
+    color: var(--cor15);
+}
+
+.txt-cor16 {
+    color: var(--cor16);
+}
+
+.txt-small {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--cinza-medio)
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.txt-center {
+    text-align: center;
+}
