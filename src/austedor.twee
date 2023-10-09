@@ -12,54 +12,74 @@ Austedor
 }
 
 
-:: \ ChamadoDaAventura {"position":"100,500","size":"100,100"}
+:: \ A Luta {"position":"425,1150","size":"100,100"}
+Soldados do imperio cercam, duas figuras realça no meio da multidão, dois inquisitores. 
+[[Capitulo 2 -> Capitulo2]]
+
+
+:: \ Capitulo2 {"position":"625,1300","size":"100,100"}
+
+
+
+:: \ ChamadoDaAventura {"position":"325,500","size":"100,100"}
 Alguns segundos se passam, e o vórtice está completamente formado, emitindo uma intensa luz azul no céu, quase como se houvesse um segundo sol.
 
-De repente, algo irrompe de dentro dele, movendo-se a uma velocidade incrível, caindo em algum lugar, mas em qual lugar?
+  De repente, algo irrompe de dentro dele, movendo-se a uma velocidade incrível, caindo em algum lugar, mas em qual lugar?
 
-Margulis se questiona; ela nunca tinha testemunhado algo assim antes.
+  Margulis se questiona; ela nunca tinha testemunhado algo assim antes.
 
-Ela poderia utilizar a magia Locusfind para facilitar a localização do objeto, mas se o fizesse, os inquisidores poderiam descobrir que ela usou a magia.
+  Ela poderia utilizar a magia Locusfind para facilitar a localização do objeto, mas se o fizesse, os inquisidores poderiam descobrir que ela usou a magia.
 
-Outros segundos passam, e o vórtice simplesmente desaparece, como se nunca tivesse existido.
+  Outros segundos passam, e o vórtice simplesmente desaparece, como se nunca tivesse existido.
 
-Um arrepio percorre a espinha de Margulis, forçando-a a tomar uma decisão.
+  Um arrepio percorre a espinha de Margulis, forçando-a a tomar uma decisão.
   <button id="LocusFind" class="cursor-pointer">
-<img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/icones-magicos/b-locus-finder.jpg?raw=true" alt="Explosão de Fogo" width="100">
+  <img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/icones-magicos/b-locus-finder.jpg?raw=true" alt="Explosão de Fogo" width="100">
     ''(text-colour:yellow)[LocusFind]''
   </button>
   <div id="resultado"class="txt-small"></div>
     <div id="resultadoBom" style="display:none">
-    Ao utilizar a magia, Margulis consegue determinar a localização da queda.
+      Margulis, utilizando um pequeno giz que possuía, começou a desenhar um círculo no chão, inscrevendo algumas runas mágicas para localizar o que quer que tivesse emergido do vórtice.
 
-    -- É um homem, e ele está gravemente ferido!
-    -- Devo preparar o Sombra e partir imediatamente!
+      Ao concluir o desenho e recitar as palavras mágicas, uma intensa luz energética começou a se concentrar, fazendo com que o círculo brilhasse intensamente. 
+      Margulis observou, fascinada, enquanto toda a trajetória do objeto era revelada a ela, permitindo-lhe determinar com precisão o local da queda.
 
-    Margulis está ciente de que o tempo está se esgotando, pois sabe que logo os soldados começarão a procurá-la e pelo homem que caiu.
+
+      -- É um homem, e ele está gravemente ferido!
+      -- Devo preparar o Sombra e partir imediatamente!
+
+      Margulis está ciente de que o tempo está se esgotando, pois sabe que logo os soldados começarão a procurá-la e pelo homem que caiu.
+      
     [[Preparar o Sombra e partir imediatamente -> jornadaAteOLocalDaQueda]]
     </div>
 
   <div id="resultadoRuim" style="display:none">
-    Margulis não consegue determinar exatamente onde ocorreu a queda, tendo apenas uma direção geral como referência. Além disso, ela está ciente de que, ao utilizar uma magia desse nível, pode ter chamado a atenção dos inquisidores, e é provável que mais soldados estejam a caminho, investigando quaisquer sinais de magia.
+    Margulis, utilizando um pequeno giz que possuía, começou a desenhar um círculo no chão, inscrevendo algumas runas mágicas na esperança de localizar o que quer que tivesse emergido do vórtice.
 
-    Com a ansiedade crescendo, Margulis se sente pressionada a tomar uma decisão rapidamente.
-  </div>
+    Contudo, ao concluir o desenho e recitar as palavras mágicas, uma intensa luz energética começou a se concentrar, fazendo com que o círculo brilhasse intensamente. No entanto, a magia foi incapaz de localizar o que quer que tivesse caído.
+
+    Margulis, frustrada, percebeu que talvez fosse necessário ir até o local da queda com base no que havia visto no céu.
+
+    Com a ansiedade crescendo, Margulis se sentiu pressionada a partir imediatamente, sem saber ao certo o que a esperava. Além disso, agora havia um agravante, pois qualquer inquisidor pode ter conseguido sentir a utilização dessa magia.
+
+    Agora o tempo estava acabando.
+   [[Preparar o Sombra e partir imediatamente -> jornadaAteOLocalDaQueda]]
+</div>
 
     <script>
-        // Função para gerar um número aleatório entre 1 e 100
         function gerarNumeroAleatorio() {
-            return Math.floor(Math.random() * 100) + 1;
+            return Math.floor(Math.random() * 20);
         }
 
-        // Função para manipular o clique do botão
         document.getElementById("LocusFind").addEventListener("click", function() {
             const confirmacao = window.confirm("Realmete deseja usar essa magia?");
 
             if (confirmacao) {
-                localStorage.setItem('UselocusFind','true')
+                sessionStorage.setItem('uselocusFind','true')
+                document.getElementById('safeJurney').style.display = "none"
                 const numeroAleatorio = gerarNumeroAleatorio();
-                document.getElementById("resultado").textContent = `Você Tirou: ${numeroAleatorio}`;
-                const x = 60;
+                const x = 100;
+                document.getElementById("resultado").textContent = `Você Tirou: ${numeroAleatorio}.`;
             
                 if (numeroAleatorio > x) {
                     document.getElementById("resultadoBom").style.display = "block";
@@ -70,28 +90,108 @@ Um arrepio percorre a espinha de Margulis, forçando-a a tomar uma decisão.
             }
         });
     </script>
+  [[Entrar na cabana -> voltarACabana]]
+  <div id="safeJurney" style="display:block">
+  [[Ir Investigar -> jornadaSegura]]
+  </div>
+
+
+:: \ Grimórios\  {"position":"375,125","size":"100,100"}
+
+
+
+:: \ RetornoACabana {"position":"375,950","size":"100,100"}
+De volta  a Cabana, ao tentar usar magia de cura, margulis descobre que nao funciou. 
+O homem conta que veio do futuro.
+
+[[A luta -> A Luta]]
+
+
+:: \ jornadaAteOLocalDaQueda {"position":"700,800","size":"100,100"}
+<div id="beforeStartJorney"></div>
+  =|=
+  <img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/img/margulisNoCavaloNaTundra.jpg?raw=true" alt="Margulis olhando a tempestade" width="100%" higth="auto">
+  =|=
+  <p>
+    Margulis cavalgava pelas tundras, utilizando um caminho alternativo e mais elevado. De lá, ela conseguia ter uma visão de todo o vale.
+
+    Na pequena vila de Mechmor, ela notou um grande movimento. Uma grande caravana estava se preparando para partir.
+  </p>
+  |==|
+
+  <script>
+  const uselocusFind = !!sessionStorage.getItem('uselocusFind') ? true : false
+  const backInside = !!sessionStorage.getItem(`backInside`) ? true : false
+    if(!!uselocusFind) {
+      if(uselocusFind && !backInside) {
+        document.getElementById('beforeStartJorney').textContent = `Logo após preparar o Sombra, com todos os suprimentos necessários, incluindo ingredientes para fazer poções e seu Grimório mágico, para sua jronada. Margulis lança um último olhar à sua cabana. Era a cabana onde ela cresceu, onde recebeu seu treinamento e onde tantas memórias foram criadas ao longo dos anos. Era como se estivesse se despedindo de uma parte importante de sua vida.`
+      }
+      else {
+          document.getElementById('beforeStartJorney').textContent = `Margulis lançou um último olhar à sua cabana onde ela tinha crescido, onde sua avó a havia ensinado a magia e onde ela havia passado tantas horas estudando e praticando. Margulis sentiu uma onda de nostalgia ao se lembrar de todas as memórias que tinha naquele lugar.`
+      }
+    }
+</script>
+  [[Local da queda -> localDaQueda]]
+
+
+:: \ jornadaSegura {"position":"225,800","size":"100,100"}
+
+Margulis cavalgava pelas vastas tundras geladas de Austedor, seguindo um caminho sinuoso e elevado que lhe oferecia uma vista panorâmica do vale abaixo. O sol estava prestes a se pôr, tingindo o horizonte de tons quentes de laranja e rosa, enquanto os picos das montanhas refletiam um brilho dourado.
+
+Ao descer do cavalo, Margulis sentiu o ar gelado mordendo seu rosto e o vento cortante soprando por entre suas roupas. Ela ajustou seu capuz e observou a vastidão das tundras, onde o branco da neve se estendia até onde a vista alcançava.
+
+Foi então que ela notou algo incomum à sua frente. Uma figura majestosa e imponente emergia da neve a alguns metros de distância. Era um ser magnífico, um Nivalith, com sua pelagem branca como a neve reluzindo sob os últimos raios do sol.
+
+=|=
+
+<img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/img/MargulisEoNivalith.jpg?raw=true" alt="" width="100%" higth="auto">
+
+=|=
+
+O Nivalith estava de pé, com sua cauda longa e espessa varrendo a neve ao seu redor. Seus chifres dourados se destacavam contra o céu crepuscular, e seus olhos azul-gelo olhavam diretamente para Margulis.
+
+
+Ela se aproximou com cuidado, sentindo uma sensação de reverência diante da majestade da criatura. O Nivalith não demonstrou medo ou agressividade, mas em vez disso exalava serenidade e graça.
+
+|==|
+
+Margulis se ajoelhou diante do Nivalith, sabendo que essa era uma oportunidade rara de estar perto de uma das criaturas mágicas das tundras. Ela observou o Nivalith por um momento, maravilhada com sua beleza e tranquilidade, e imaginou quais segredos essa criatura poderia guardar nas profundezas das tundras congeladas.
+
+Margulis, após observar o Nivaliths por alguns momentos, decide seguir em frente com sua jornada. Ela volta a montar em seu cavalo e continua a cavalgar pelas tundras geladas, com seu destino incerto, mas determinada a encontrar o que quer que tenha caído do vórtice misterioso.
+
+[[Seguir na estrada -> jornadaAteOLocalDaQueda]]
+
+
+:: \ localDaQueda {"position":"600,1000","size":"100,100"}
+Ao chegar ao local, Margulis nota que já existe alguns camponeses ao redor, ao chegar mais perto nota-se que é um homem, vestindo uma especie de armadura, diferente ao que já tinha sido vista.
+
+[[Levar de volta a Cabana -> RetornoACabana]]
+[[Capitulo 2 -> Capitulo2]]
+
+
+:: \ voltarACabana {"position":"75,625","size":"100,100"}
+<img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/img/margulisNaCabana.jpg?raw=true" alt="Margulis arrumando suas coisas" width="100%" higth="auto">
+
+  Ao adentrar sua cabana, Margulis sentiu uma aura de potencial iminente. Ela olhou ao redor, seus olhos capturando os objetos de magia e artefatos que sua avó havia deixado para trás, lembranças de uma vida dedicada à magia e à liberdade.
+
+  A visão desses artefatos mágicos despertou algo dentro dela, uma inquietude e um desejo por algo maior. Margulis percebeu uma oportunidade única de deixar para trás a vida que conhecia e abraçar sua verdadeira herança como bruxa. Era a chance de lutar por sua liberdade, não apenas para si mesma, mas também para todos aqueles oprimidos pelo reinado opressor de Austedor.
+
+  Decidida, ela começou a arrumar seu Grimório, pegando objetos essenciais para poções e feitiços. Margulis sabia que essa jornada seria arriscada, e talvez ela nunca mais retornasse à sua cabana. No entanto, a sensação de propósito e a promessa de aventura a guiam enquanto ela se preparava para a jornada que mudaria sua vida para sempre.
  
-[[Entrar na cabana -> voltarACabana]]
-[[Ir Investigar -> investigarObjeto]]
+ [[Seguir na estrada -> jornadaAteOLocalDaQueda]]
 
-
-:: \ investigarObjeto {"position":"300,725","size":"100,100"}
-
-
-
-:: \ jornadaAteOLocalDaQueda {"position":"300,500","size":"100,100"}
-
-
-
-:: \ voltarACabana {"position":"25,725","size":"100,100"}
-
-
-
-:: Magias {"position":"400,200","size":"100,100"}
-
+ <script>
+    const uselocusFind = !!sessionStorage.getItem('uselocusFind') ? true : false
+    if(!!uselocusFind) {
+      if(uselocusFind){
+        sessionStorage.setItem('backInside', true)
+      }
+    }
+ </script>
 
 
 :: Passagem 1: Início da Aventura {"position":"100,300","size":"100,100"}
+## Capítulo 1: Passado, Presente, Futuro
 =|=
 <img src="https://github.com/Setubal18/austedorGameBook/blob/main/assets/img/capt1.jpg?raw=true" alt="Margulis olhando a tempestade" width="100%" higth="auto">
 =|=
@@ -110,7 +210,6 @@ Enquanto inicia suas atividades, Margulis discretamente utiliza a magia para fac
 </p>
 
 [[next -> ChamadoDaAventura]]
-
 
 
 :: SobreOMundo {"position":"250,200","size":"100,100"}
@@ -161,9 +260,10 @@ Enquanto inicia suas atividades, Margulis discretamente utiliza a magia para fac
     <div class="txt-cor6 font" style="font-size: 24px; padding: 20px; text-align: center;">
         [[Iniciar Jogo->prologo]]
         [[Sobre o Mundo->SobreOMundo]]
-        [[Livros de Feitiços->Magias]]
+        [[Grimórios -> Grimórios ]]
+
     </div>
-</div>
+</;div>
 
 
 :: prologo {"position":"100,125","size":"100,100"}
@@ -180,7 +280,7 @@ Mas uma nova esperança está prestes a surgir e mudar o destino de todo o mundo
 
 
 :: StoryScript [script]
-// Evitar que o usuario abra develop tools. Comente esse trecho em develop/debug mode
+//Evitar que o usuario abra develop tools. Comente esse trecho em develop/debug mode
 // document.addEventListener("contextmenu", (event) => event.preventDefault());
 // document.onkeydown = function (e) {
 //   if (event.keyCode == 123) {
